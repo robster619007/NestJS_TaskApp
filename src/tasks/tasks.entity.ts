@@ -1,10 +1,11 @@
+/* eslint-disable prettier/prettier */
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm'
-import { TaskStatus } from './task.model';
+import { TaskStatus } from './task.enum';
 
 @Entity()
 export class TaskEntity {
-    @PrimaryGeneratedColumn()
-    id: number;
+    @PrimaryGeneratedColumn('uuid')
+    id: string;
     @Column()
     title: string;
     @Column()
